@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Card = ({data ,array, arrayfn}) => {
+  const dispatch=useDispatch();
+ const activeId= useSelector(state => state.userReducer.activeId)
+  
   const addRmfn=(id)=>{
+    
     if(!array.includes(id)){
-      arrayfn([...array,id])
+      dispatch({type:'ADD_CART',payload:{id:activeId,cart:id}})
      
     }
     else{
-      arrayfn(array.filter((item)=>item!==id))
+      dispatch({type:'REMOVE_CART',payload:{id:activeId,cart:id}})
     }
-    console.log(array);
+    
   }
   const [selectedDrink,setSelectedDrink]=useState(0);
   const[selected ,setSelected]=useState(false);
