@@ -27,7 +27,7 @@ const Main = () => {
     const array=new Array(pageCount).fill(1);
     
   return (
-    <div className='  lg:col-span-3  flex flex-col gap-2 justify-center  ' onClick={()=>{
+    <div className='  md:col-span-3  flex flex-col gap-2 justify-center  ' onClick={()=>{
       console.log(selectedUser);
     }}>
     

@@ -6,7 +6,7 @@ import User from './component/User';
 
 function App() {
   return (
-    <div className="App grid lg:grid-flow-col lg:grid-cols-5 lg:px-14 py-1 px-1 grid-flow-row gap-2">
+    <div className="App grid md:grid-flow-col md:grid-cols-5 md:px-14 py-1 px-1 grid-flow-row gap-2">
     <Main  />
     <User/>
     </div>

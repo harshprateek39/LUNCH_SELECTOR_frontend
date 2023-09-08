@@ -23,11 +23,11 @@ const Card = ({data ,array, arrayfn}) => {
 
   return (
     <>
-    <div className=' grid lg:grid-flow-col lg:grid-cols-3 grid-flow-row p-4 gap-4'>
-        <div className=' lg:col-span-1 w-full  justify-end lg:h-52   '>
-            <img className=' lg:h-40 w-full  aspect-video mx-auto   object-cover' src={data.img} alt=""/>
+    <div className=' grid md:grid-flow-col md:grid-cols-3 grid-flow-row p-4 gap-4'>
+        <div className=' md:col-span-1 w-full  justify-end md:h-52  '>
+            <img className=' md:h-40   aspect-video mx-auto   object-cover' src={data.img} alt=""/>
         </div>
-        <div className=' col-span-2  flex flex-col items-start gap-3'>
+        <div className=' md:col-span-2  flex flex-col items-start gap-3'>
          <h1 className=' text-slate-500 font-medium text-sm'>{data.title}</h1>
          <h2 className=' text-slate-700 font-semibold'>{data.detail} </h2>
          <div className=' flex flex-col items-start'>

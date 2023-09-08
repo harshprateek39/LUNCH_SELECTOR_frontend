@@ -31,7 +31,7 @@ const User = () => {
    const [name, setName] = useState('John');
     
   return (
-    <div className='  lg:col-span-2 flex  items-start flex-col'>
+    <div className='  md:col-span-2 flex  items-start flex-col'>
     <h1 className=' font-bold py-3 text-xl ' > Select User :</h1>
     <div className=' flex flex-col w-full'>
       <div onClick={()=>{setExpanded(!expanded)}} className=' bg-white  border-l-4 border-blue-700  cursor-pointer flex justify-between items-center px-3 outline outline-1 text-blue-900 outline-blue-500 rounded-sm py-3 font-bold text-lg'>
