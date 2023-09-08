@@ -7,6 +7,8 @@ const Main = () => {
   const [tag, setTag] = useState('all');
   const [selectedArray, setSelectedArray]=useState([])
   const selectedUser= useSelector(state => state.userReducer.totaluser.filter((item)=>item.id===state.userReducer.activeId))
+
+  
     const [page,setPage]=React.useState(1)
     const [offset,setOffset]=React.useState(0)
     const [arr,setArr]= useState(file.meals)

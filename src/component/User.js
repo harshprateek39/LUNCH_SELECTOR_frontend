@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
@@ -6,6 +6,13 @@ import {RiArrowDropDownLine,RiArrowDropUpLine,RiAddLine} from 'react-icons/ri';
 
 const User = () => {
   const users= useSelector(state => state.userReducer.totaluser)
+  const totalItems= useSelector(state => state.TotalItemReducer.netItem);
+  const [sum,setSum]=useState(0);
+
+ 
+    let Tsum=totalItems.reduce(( acc, item)=>{ return acc+ item.price} , 0);
+
+
   const dispatch=useDispatch();
  const addUserfn=()=>{
     setAddUser(!addUser);
@@ -45,7 +52,10 @@ const User = () => {
       </div>:<></>}
       
     </div>
-
+  <div className=' flex w-full justify-end items-center gap-2'>
+  <h1 className=' font-medium text-sm '>Total Price for All :</h1>
+  <h2 className='font-bold text-lg'>{ parseFloat(Tsum.toFixed(2))}{" "}€</h2>
+  </div>
 
     </div>
   )

@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
+import { removeItem } from '../redux/userRedux/TotalItemAction';
 const Card = ({data ,array, arrayfn}) => {
   const dispatch=useDispatch();
  const activeId= useSelector(state => state.userReducer.activeId)
-  
-  const addRmfn=(id)=>{
-    
+  const totalitem = useSelector(state => state.TotalItemReducer.netItem)
+  const addRmfn=(id,item)=>{
+    console.log(item);
     if(!array.includes(id)){
       dispatch({type:'ADD_CART',payload:{id:activeId,cart:id}})
+      dispatch({type:'ADD_ITEM',payload:item})
      
     }
     else{
       dispatch({type:'REMOVE_CART',payload:{id:activeId,cart:id}})
+      dispatch(removeItem(totalitem,id))
     }
     
   }
@@ -23,7 +25,7 @@ const Card = ({data ,array, arrayfn}) => {
     <>
     <div className=' grid lg:grid-flow-col lg:grid-cols-3 grid-flow-row p-4 gap-4'>
         <div className=' lg:col-span-1 w-full  justify-end lg:h-52   '>
-            <img className=' lg:h-40 w-full  aspect-video mx-auto   object-cover' src={data.img} alt="" />
+            <img className=' lg:h-40 w-full  aspect-video mx-auto   object-cover' src={data.img} alt=""/>
         </div>
         <div className=' col-span-2  flex flex-col items-start gap-3'>
          <h1 className=' text-slate-500 font-medium text-sm'>{data.title}</h1>
@@ -40,7 +42,7 @@ const Card = ({data ,array, arrayfn}) => {
         </div>
         <div className=' flex flex-col items-start gap-1'> 
         <h1 className=' text-sm font-semibold' > {data.price} €</h1>
-        <button className=' px-4 py-2 rounded-sm outline outline-1 text-xs font-semibold hover:bg-slate-300 ' onClick={()=> addRmfn(data.id)}>{!array.includes(data.id)?"select":"remove"}</button>
+        <button className=' px-4 py-2 rounded-sm outline outline-1 text-xs font-semibold hover:bg-slate-300 ' onClick={()=> addRmfn(data.id,data)}>{!array.includes(data.id)?"select":"remove"}</button>
         </div>
         </div>
         
