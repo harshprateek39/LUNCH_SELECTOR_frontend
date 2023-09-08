@@ -44,7 +44,7 @@ const Card = ({data ,array, arrayfn}) => {
          <p className=' text-slate-600 text-sm font-semibold'> <span className=' text-slate-700 font-bold text-base'> Desert </span>{data.desert}</p>
          <p className=' text-slate-600 text-sm font-semibold'> <span className=' text-slate-700 font-bold text-base'> Selected drink : </span>{selectedDrink!==-1?data.drinks[selectedDrink].title:"none"}</p></div>
         <div className=' flex justify-between  w-full '>
-        <div className=' flex gap-3 py-1'>
+        <div className=' flex gap-3 py-1 flex-wrap'>
         {data.drinks.map((drink,index)=><img className=' aspect-square h-12 cursor-pointer outline hover:shadow-lg hover:outline-slate-700 focus:outline-2  focus:outline-slate-700 outline-slate-300 outline-1' src='https://w7.pngwing.com/pngs/555/735/png-transparent-red-cocktail-red-drink-cocktail-thumbnail.png' onClick={ ()=>{
           if(index===selectedDrink){
             setSelectedDrink(-1) ;
