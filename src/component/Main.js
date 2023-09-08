@@ -27,9 +27,7 @@ const Main = () => {
     const array=new Array(pageCount).fill(1);
     
   return (
-    <div className='  md:col-span-3  flex flex-col gap-2 justify-center  ' onClick={()=>{
-      console.log(selectedUser);
-    }}>
+    <div className='  md:col-span-3  flex flex-col gap-2 justify-center  '>
     
         <Header tagfn={setTag}/>
       <div className=' bg-white rounded-sm  '>  {arr.slice(firstindex,lastindex).map((meal,index)=> <Card data={meal} array={selectedUser[0].cart} arrayfn={setSelectedArray} /> )}</div>
