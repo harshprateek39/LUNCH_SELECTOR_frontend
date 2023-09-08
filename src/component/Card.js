@@ -59,7 +59,7 @@ const Card = ({data ,array, arrayfn}) => {
         }}></img>)}
         </div>
         <div className=' flex flex-col items-start gap-1'> 
-        <h1 className=' text-sm font-semibold' > {data.price + jucieprice} €</h1>
+        <h1 className=' text-sm font-semibold' > {parseFloat((data.price + jucieprice).toFixed(2))} €</h1>
         <button className=' px-4 py-2 rounded-sm outline outline-1 text-xs font-semibold hover:bg-slate-300 ' onClick={()=> addRmfn(data.id,data)}>{!array.includes(data.id)?"select":"remove"}</button>
         </div>
         </div>
